@@ -1,0 +1,89 @@
+View
+
+
+<View>:
+    website_input: website_input
+    email_input: email_input
+    password_input: password_input
+    BoxLayout:
+        orientation: "vertical"
+        padding: 40
+        spacing: 30
+        Label:
+            text: 'PASSWORD MANAGER'
+        BoxLayout:
+            TextInput:
+                background_color: root.color
+                foreground_color: 1,1,1,1
+                id: website_input
+                hint_text: 'Website'
+                size_hint: .7, None
+                height: '40'
+            Button:
+                text: 'LOAD'
+                background_color: root.btn_color
+                background_normal: ''
+                size_hint: .3, None
+                on_press: root.load_profile()
+                height: '40'
+        BoxLayout:
+            TextInput:
+                background_color: root.color
+                foreground_color: 1,1,1,1
+                id: email_input
+                hint_text: 'Email'
+                size_hint: 1, None
+                height: '40'
+        BoxLayout:
+            TextInput:
+                background_color: root.color
+                foreground_color: 1,1,1,1
+                id: password_input
+                hint_text: 'Password'
+                size_hint: .7, None
+                height: '40'
+            Button:
+                text: 'GENERATE'
+                background_color: root.btn_color
+                background_normal: ''
+                on_press: root.generate_pw()
+                size_hint: .3, None
+                height: '40'
+        BoxLayout:
+            Button:
+                text: 'SAVE'
+                background_color: root.btn_color
+                background_normal: ''
+                on_press: root.save_profile()
+                size_hint: 1, None
+                height: '40'
+
+
+
+
+
+<PasswordPopup>:
+    close_btn: close_btn
+    orientation:"vertical"
+    BoxLayout:
+        size_hint: 1, None
+        height: 50
+        Label:
+            text: "USERNAME/EMAIL:"
+        Label:
+            text: root.email_value
+    BoxLayout:
+        size_hint: 1, None
+        height: 50
+        Label:
+            text: "PASSWORD:"
+        Label:
+            text: root.pass_value
+    Button:
+        size_hint: 1, None
+        height: 50
+        id: close_btn
+        text: 'Close'
+
+
+
